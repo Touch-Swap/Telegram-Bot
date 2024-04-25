@@ -1,8 +1,8 @@
 import { ErrorHandler } from "grammy";
 import type { Context } from "../contexts";
-import { getUpdateInfo } from "../helper";
+import { getUpdateInfo } from "../helpers";
 
-export const errorHandler: ErrorHandler<Context> = (error) => {
+export const errorHandler: ErrorHandler<Context> = error => {
   const { ctx } = error;
 
   ctx.logger.error({

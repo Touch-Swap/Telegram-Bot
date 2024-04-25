@@ -1,6 +1,6 @@
 import { Middleware } from "grammy";
 import type { Update } from "@grammyjs/types";
-import type { Context } from "../contexts"
+import type { Context } from "../contexts";
 
 export function getUpdateInfo(ctx: Context): Omit<Update, "update_id"> {
   // eslint-disable-next-line camelcase, @typescript-eslint/no-unused-vars
@@ -20,11 +20,10 @@ export function logHandle(id: string): Middleware<Context> {
   };
 }
 
-
 export function chunk<T>(array: T[], size: number) {
-    const result = [];
-    for (let index = 0; index < array.length; index += size) {
-      result.push(array.slice(index, index + size));
-    }
-    return result;
+  const result = [];
+  for (let index = 0; index < array.length; index += size) {
+    result.push(array.slice(index, index + size));
   }
+  return result;
+}
