@@ -21,7 +21,22 @@
     "zod": "^3.23.4"
   },
   "scripts": {
-    "lint": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore ./*.ts .//**/*.ts ./scripts/**/*.ts ./test/**/*.ts",
+    "check-types": "tsc --noEmit --incremental",
+    "format": "prettier --write . '!(node_modules)/**/*'",
+    "lint": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore ",
     "lint-staged": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore"
+  },
+  "devDependencies": {
+    "husky": "~8.0.3",
+    "lint-staged": "~13.2.2",
+    "eslint": "~8.24.0",
+    "eslint-config-next": "~13.1.6",
+    "eslint-config-prettier": "~8.5.0",
+    "eslint-plugin-prettier": "~4.2.1",
+    "typescript": "~5.1.6",
+    "type-fest": "~4.6.0",
+    "prettier": "~2.8.4",
+    "autoprefixer": "~10.4.12",
+    "@typescript-eslint/eslint-plugin": "~5.40.0"
   }
 }
