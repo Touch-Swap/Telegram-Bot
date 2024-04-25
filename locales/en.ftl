@@ -1,0 +1,20 @@
+start_command = 
+    .description = Start the bot
+language_command = 
+    .description = Change language
+setcommands_command =
+    .description = Set bot commands
+
+welcome = 
+    .message = Welcome!
+    .scan_qr_button = Scan QR
+    .generate_qr_button = Generate QR
+inline_mode =
+    .scan_qr_button = Open QR Scanner
+    .result_label = Send result
+language = 
+    .select = Please, select your language
+    .changed = Language successfully changed!
+admin =
+    .commands-updated = Commands updated.
+unhandled = Unrecognized command. Try /start
