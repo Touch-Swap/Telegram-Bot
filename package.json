@@ -21,22 +21,32 @@
     "zod": "^3.23.4"
   },
   "scripts": {
+    "typecheck": "tsc",
+    "build": "tsc --noEmit false",
+    "dev": "tsc-watch --onSuccess \"tsx ./src/main.ts\"",
+    "start": "tsc ./main.ts",
+    "start:force": "tsx ./src/main.ts",
     "check-types": "tsc --noEmit --incremental",
     "format": "prettier --write . '!(node_modules)/**/*'",
     "lint": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore ",
-    "lint-staged": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore"
+    "lint-staged": "eslint --config ./.eslintrc.json --ignore-path ./.eslintignore",
+    "prepare": "yarn husky install"
   },
   "devDependencies": {
-    "husky": "~8.0.3",
-    "lint-staged": "~13.2.2",
+    "@typescript-eslint/eslint-plugin": "~5.40.0",
+    "autoprefixer": "~10.4.12",
     "eslint": "~8.24.0",
     "eslint-config-next": "~13.1.6",
     "eslint-config-prettier": "~8.5.0",
     "eslint-plugin-prettier": "~4.2.1",
-    "typescript": "~5.1.6",
-    "type-fest": "~4.6.0",
+    "husky": "~8.0.3",
+    "lint-staged": "~13.2.2",
     "prettier": "~2.8.4",
-    "autoprefixer": "~10.4.12",
-    "@typescript-eslint/eslint-plugin": "~5.40.0"
+    "tsc-watch": "^6.2.0",
+    "type-fest": "~4.6.0",
+    "typescript": "~5.1.6"
+  },
+  "lint-staged": {
+    "*.ts": "yarn lint"
   }
 }
