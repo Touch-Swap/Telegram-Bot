@@ -17,14 +17,15 @@
     "node-graceful-shutdown": "^1.1.5",
     "pino": "^9.0.0",
     "pino-pretty": "^11.0.0",
+    "tsx": "^4.7.3",
     "znv": "^0.4.0",
     "zod": "^3.23.4"
   },
   "scripts": {
     "typecheck": "tsc",
     "build": "tsc --noEmit false",
-    "dev": "tsc-watch --onSuccess \"tsx ./src/main.ts\"",
-    "start": "tsc ./main.ts",
+    "dev": "tsc-watch --onSuccess \"tsx ./main.ts\"",
+    "start": "tsc && tsx ./main.ts",
     "start:force": "tsx ./src/main.ts",
     "check-types": "tsc --noEmit --incremental",
     "format": "prettier --write . '!(node_modules)/**/*'",

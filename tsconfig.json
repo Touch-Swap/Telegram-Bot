@@ -9,5 +9,6 @@
     "noEmit": true,
     "noEmitOnError": true,
     "allowSyntheticDefaultImports": true,
+    "outDir": "./dist",
   }
 }

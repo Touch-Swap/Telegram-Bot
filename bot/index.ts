@@ -8,6 +8,7 @@ import config from "../config";
 import { errorHandler } from "../handlers/error";
 import { i18n } from "../I18n";
 import { updateLogger } from "../middleware";
+import { welcomeFeature } from "../features";
 
 type Options = {
   sessionStorage?: StorageAdapter<SessionData>;
@@ -41,7 +42,7 @@ export default function createBot(token: string, options: Options = {}) {
   protectedBot.use(i18n);
 
   // Handlers
-  // protectedBot.use(welcomeFeature);
+  protectedBot.use(welcomeFeature);
   // protectedBot.use(adminFeature);
 
   // if (isMultipleLocales) {
