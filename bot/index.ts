@@ -9,6 +9,7 @@ import { errorHandler } from "../handlers/error";
 import { i18n, isMultipleLocales } from "../I18n";
 import { updateLogger } from "../middleware";
 import { welcomeFeature, unhandledFeature, languageFeature } from "../features";
+import menu from "../features/menu";
 
 type Options = {
   sessionStorage?: StorageAdapter<SessionData>;
@@ -40,6 +41,7 @@ export default function createBot(token: string, options: Options = {}) {
     }),
   );
   protectedBot.use(i18n);
+  protectedBot.use(menu)
 
   // Handlers
   protectedBot.use(welcomeFeature);
