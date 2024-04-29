@@ -1,7 +1,7 @@
 import { BotCommand } from "@grammyjs/types";
 import { CommandContext } from "grammy";
 import { i18n, isMultipleLocales } from "../../I18n";
-import config from "../../config";
+import config from "../../../config";
 import type { Context } from "../../contexts";
 
 function getLanguageCommand(localeCode: string): BotCommand {
@@ -51,14 +51,9 @@ export async function setCommandsHandler(ctx: CommandContext<Context>) {
   );
 
   if (isMultipleLocales) {
-    const requests = i18n.locales.map((code) =>
+    const requests = i18n.locales.map(code =>
       ctx.api.setMyCommands(
-        [
-          ...getPrivateChatCommands(code),
-          ...(isMultipleLocales
-            ? [getLanguageCommand(DEFAULT_LANGUAGE_CODE)]
-            : []),
-        ],
+        [...getPrivateChatCommands(code), ...(isMultipleLocales ? [getLanguageCommand(DEFAULT_LANGUAGE_CODE)] : [])],
         {
           language_code: code,
           scope: {
@@ -79,7 +74,7 @@ export async function setCommandsHandler(ctx: CommandContext<Context>) {
   });
 
   if (isMultipleLocales) {
-    const requests = i18n.locales.map((code) =>
+    const requests = i18n.locales.map(code =>
       ctx.api.setMyCommands(getGroupChatCommands(code), {
         language_code: code,
         scope: {

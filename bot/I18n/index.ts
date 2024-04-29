@@ -6,6 +6,9 @@ export const i18n = new I18n<Context>({
   defaultLocale: "en",
   directory: path.resolve(process.cwd(), "locales"),
   useSession: true,
+  globalTranslationContext(ctx) {
+    return { name: ctx.from?.username ?? "" };
+  },
   fluentBundleOptions: {
     useIsolating: false,
   },

@@ -2,14 +2,18 @@ import { autoChatAction } from "@grammyjs/auto-chat-action";
 import { hydrate } from "@grammyjs/hydrate";
 import { hydrateReply, parseMode } from "@grammyjs/parse-mode";
 import { BotConfig, StorageAdapter, Bot as TelegramBot, session } from "grammy";
-import { Context, SessionData, createContextConstructor } from "../contexts";
-import logger from "../logger";
+import { Context, SessionData, createContextConstructor } from "./contexts";
+import logger from "./logger";
 import config from "../config";
-import { errorHandler } from "../handlers/error";
-import { i18n, isMultipleLocales } from "../I18n";
-import { updateLogger } from "../middleware";
-import { welcomeFeature, unhandledFeature, languageFeature } from "../features";
-import menu from "../features/menu";
+import { errorHandler } from "./handlers/error";
+import { i18n, isMultipleLocales } from "./I18n";
+import { updateLogger } from "./middleware";
+import { welcomeFeature, unhandledFeature, languageFeature , adminFeature} from "./features";
+import menu from "./features/menu";
+import router from "./features/router";
+import path from "node:path";
+
+console.log(path.resolve(process.cwd(), "locales"));
 
 type Options = {
   sessionStorage?: StorageAdapter<SessionData>;
@@ -41,15 +45,17 @@ export default function createBot(token: string, options: Options = {}) {
     }),
   );
   protectedBot.use(i18n);
-  protectedBot.use(menu)
+  //protectedBot.use(menu);
+  //protectedBot.use(router);
 
   // Handlers
   protectedBot.use(welcomeFeature);
-  // protectedBot.use(adminFeature);
+  protectedBot.use(adminFeature);
 
   if (isMultipleLocales) {
     protectedBot.use(languageFeature);
   }
+
 
   // // must be the last handler
   protectedBot.use(unhandledFeature);

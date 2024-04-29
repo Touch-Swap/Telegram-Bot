@@ -1,7 +1,7 @@
 import { Composer } from "grammy";
 import { changeLanguageData } from "../callback-data";
 import type { Context } from "../contexts";
-import { logHandle } from "../helpers/";
+import { logHandle } from "../../helpers";
 import { i18n } from "../I18n";
 import { createChangeLanguageKeyboard } from "../keyboards";
 

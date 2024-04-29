@@ -3,7 +3,7 @@ import ISO6391 from "iso-639-1";
 import { changeLanguageData } from "../callback-data";
 import type { Context } from "../contexts";
 import { i18n } from "../I18n";
-import { chunk } from "../helpers";
+import { chunk } from "../../helpers";
 
 export const createChangeLanguageKeyboard = async (ctx: Context) => {
   const currentLocaleCode = await ctx.i18n.getLocale();
