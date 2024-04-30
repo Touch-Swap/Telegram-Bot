@@ -1,8 +1,9 @@
 import { onShutdown } from "node-graceful-shutdown";
 import createBot from "./bot";
 import config from "./config";
-import logger from "./logger";
+import logger from "./bot/logger";
 import { createServer } from "./server";
+
 
 async function runBot() {
   try {

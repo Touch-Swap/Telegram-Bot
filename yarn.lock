@@ -190,7 +190,7 @@
   resolved "https://registry.yarnpkg.com/@fluent/bundle/-/bundle-0.17.1.tgz#239388f55f115dca593f268d48a5ab8936dc9556"
   integrity sha512-CRFNT9QcSFAeFDneTF59eyv3JXFGhIIN4boUO2y22YmsuuKLyDk+N1I/NQUYz9Ab63e6V7T6vItoZIG/2oOOuw==
 
-"@fluent/langneg@^0.6.2":
+"@fluent/langneg@^0.6.1", "@fluent/langneg@^0.6.2":
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/@fluent/langneg/-/langneg-0.6.2.tgz#95e5261c27c7f3cb6237deb62aa1b7006a9bd17d"
   integrity sha512-YF4gZ4sLYRQfctpUR2uhb5UyPUYY5n/bi3OaED/Q4awKjPjlaF8tInO3uja7pnLQcmLTURkZL7L9zxv2Z5NDwg==
@@ -199,6 +199,11 @@
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@grammyjs/auto-chat-action/-/auto-chat-action-0.1.1.tgz#2c70faca0e317ac3e742ea241181cedaa4231081"
   integrity sha512-70Jdy+keIri4452tluaZpKtHag5gD8pNczoXqajsnsx7pJC5wg3DAQ5unpt0xJb8KsVBAGWuJb298SBl3TVecg==
+
+"@grammyjs/fluent@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@grammyjs/fluent/-/fluent-1.0.3.tgz#e9882503e75db6135aa3cf585f51c45913288ef3"
+  integrity sha512-vM/58mhX/wlZWeCL5I/0449EnJM3KB1o+HkD2dZ6eBrbWxQyVxbLffx0ur3BxOtb7BFsUHb7PctxhI0/JN/K2w==
 
 "@grammyjs/hydrate@^1.4.1":
   version "1.4.1"
@@ -216,10 +221,20 @@
     "@fluent/bundle" "^0.17.1"
     "@fluent/langneg" "^0.6.2"
 
+"@grammyjs/menu@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@grammyjs/menu/-/menu-1.2.1.tgz#4c29c10374ec2974ba9c158fda96f5129fb331fd"
+  integrity sha512-0LV9A/UukfF46N0ceSqG1RbdCjhvB2u1MNHNkE7eRD3GVlffOBnR+MS2ESE9mSBleT9OjRV6imA7QZ57QBktOQ==
+
 "@grammyjs/parse-mode@^1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@grammyjs/parse-mode/-/parse-mode-1.9.0.tgz#f1988d6117ae7d6b55dc3188c8b0487d6cd89e2e"
   integrity sha512-c5luhtGQVkby+EJ+P/RLuEJH4+PTuw6Mm1feLM2MjoBIzGVGnPigMKvrgzndnJ6ixsyJtUlhMxuuiWreZRT8Qg==
+
+"@grammyjs/router@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@grammyjs/router/-/router-2.0.0.tgz#da3a9191d5997d438f7e1cadc2d570d755cd3fc5"
+  integrity sha512-xJ3HRNj3mVojLtkFmV+GvKpOWOnS0CGdAIdvpaq+j+8dic1wM1OhOukaotkKzAWZ6bb9QyzUUgVFN6xfZDO5VA==
 
 "@grammyjs/types@3.6.2":
   version "3.6.2"
@@ -249,6 +264,14 @@
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
+
+"@moebius/fluent@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@moebius/fluent/-/fluent-1.1.0.tgz#e65a515ace3db8015fa66d06eb2f016575c7b446"
+  integrity sha512-mW+iT2/tnGQtWmmVtpkk8hY6Jy7w3s9vXi+TL/ktyOBDHE3nUuc4haLO/2cSwKCNQT1EOjZXHZtHEZcaZBjfmA==
+  dependencies:
+    "@fluent/bundle" "^0.17.1"
+    "@fluent/langneg" "^0.6.1"
 
 "@next/eslint-plugin-next@13.1.6":
   version "13.1.6"
@@ -745,7 +768,7 @@ call-bind@^1.0.2, call-bind@^1.0.5, call-bind@^1.0.6, call-bind@^1.0.7:
     get-intrinsic "^1.2.4"
     set-function-length "^1.2.1"
 
-callback-data@^1.1.1:
+callback-data@^1.0.0, callback-data@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/callback-data/-/callback-data-1.1.1.tgz#0d4f70995df97ec039cea08985623a7205ac080c"
   integrity sha512-1XoQQTsTkuU0/Ee2vRS64d+mKmM+zfEWgarI3ETPfYV3R5UvArM7C0sXSGPff+Aztea1Vrom6LDs9HQWSZucXQ==
@@ -1740,6 +1763,13 @@ graceful-fs@^4.2.4:
   version "4.2.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.11.tgz#4183e4e8bf08bb6e05bbb2f7d2e0c8f712ca40e3"
   integrity sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==
+
+grammy-guard@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/grammy-guard/-/grammy-guard-0.5.0.tgz#de2cb448f627fb9861648354f604ad6406aad475"
+  integrity sha512-vGqrEJPpm5XnaTkklkb/luLdo+qNZX78Fr9CwLdPFEUymYByqlxU/h+NKEmzsNHzC9lc+rS8oR+xQo1Wo5Ogxg==
+  dependencies:
+    callback-data "^1.0.0"
 
 grammy@^1.22.4:
   version "1.22.4"
