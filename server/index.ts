@@ -1,7 +1,7 @@
 import fastify from "fastify";
 import { webhookCallback } from "grammy";
 import type { Bot } from "../bot";
-import logger from "../logger";
+import logger from "../bot/logger";
 
 export const createServer = async (bot: Bot) => {
   const server = fastify({
