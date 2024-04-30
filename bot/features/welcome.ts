@@ -6,8 +6,16 @@ const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
-feature.command("start", logHandle("command-start"), ctx => {
-  return ctx.reply(ctx.t("welcome.message", { name: ctx.chat.username ?? "" }), { parse_mode: "Markdown" });
+feature.command("start", logHandle("command-start"), async ctx => {
+  const text = `${ctx.t("welcome.title", { name: ctx.chat.username ?? "" })}\n${ctx.t(
+    "welcome.title-second-paragraph",
+  )} 
+  \n${ctx.t("welcome.title-thrid-paragraph")}
+  \n${ctx.t("welcome.title-fouth-paragraph")}`;
+  // const newMedia = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png");
+  //await ctx.editMessageMedia(newMedia);
+
+  return await ctx.replyWithMarkdown(text);
 });
 
 export { composer as welcomeFeature };
