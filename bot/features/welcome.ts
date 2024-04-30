@@ -12,8 +12,6 @@ feature.command("start", logHandle("command-start"), async ctx => {
   )} 
   \n${ctx.t("welcome.title-thrid-paragraph")}
   \n${ctx.t("welcome.title-fouth-paragraph")}`;
-  // const newMedia = InputMediaBuilder.photo("https://grammy.dev/images/grammY.png");
-  //await ctx.editMessageMedia(newMedia);
 
   return await ctx.replyWithMarkdown(text);
 });
