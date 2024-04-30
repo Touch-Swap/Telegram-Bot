@@ -1,17 +1,30 @@
 import path from "node:path";
-import { I18n } from "@grammyjs/i18n";
-import type { Context } from "../contexts";
+import { Fluent } from "@moebius/fluent";
 
-export const i18n = new I18n<Context>({
-  defaultLocale: "en",
-  directory: path.resolve(process.cwd(), "locales"),
-  useSession: true,
-  globalTranslationContext(ctx) {
-    return { name: ctx.from?.username ?? "" };
-  },
-  fluentBundleOptions: {
+export const supportedLanguage = ["en", "uk"];
+
+export type LanguageType = "en" | "uk";
+
+export const fluent = new Fluent({});
+
+fluent.addTranslation({
+  locales: "en",
+  filePath: [parseFile("en.ftl")],
+  bundleOptions: {
     useIsolating: false,
   },
 });
 
-export const isMultipleLocales = i18n.locales.length > 1;
+fluent.addTranslation({
+  locales: "uk",
+  filePath: [parseFile("uk.ftl")],
+  bundleOptions: {
+    useIsolating: false,
+  },
+});
+
+function parseFile(filename = "") {
+  return path.resolve(process.cwd(), "locales", filename);
+}
+
+export const isMultipleLocales = supportedLanguage.length > 1;
