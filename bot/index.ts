@@ -6,12 +6,11 @@ import { Context, SessionData, createContextConstructor } from "./contexts";
 import logger from "./logger";
 import config from "../config";
 import { errorHandler } from "./handlers/error";
-import { i18n, isMultipleLocales } from "./I18n";
+import { isMultipleLocales, fluent } from "./I18n";
 import { updateLogger } from "./middleware";
-import { welcomeFeature, unhandledFeature, languageFeature , adminFeature} from "./features";
-import menu from "./features/menu";
-import router from "./features/router";
+import { welcomeFeature, unhandledFeature, languageFeature, adminFeature, friendFeature } from "./features";
 import path from "node:path";
+import { useFluent } from "@grammyjs/fluent";
 
 console.log(path.resolve(process.cwd(), "locales"));
 
@@ -30,6 +29,7 @@ export default function createBot(token: string, options: Options = {}) {
 
   // Middlewares
   bot.api.config.use(parseMode("HTML"));
+  bot.api.config.use(parseMode("MarkdownV2"));
 
   if (config.isDev) {
     protectedBot.use(updateLogger());
@@ -40,22 +40,31 @@ export default function createBot(token: string, options: Options = {}) {
   protectedBot.use(hydrate());
   protectedBot.use(
     session({
-      initial: () => ({}),
+      initial: () => ({
+        __language_code: "en",
+      }),
       storage: sessionStorage,
     }),
   );
-  protectedBot.use(i18n);
-  //protectedBot.use(menu);
-  //protectedBot.use(router);
+
+  protectedBot.use(
+    useFluent({
+      fluent,
+      defaultLocale: "en",
+      localeNegotiator: async context => context.session.__language_code,
+    }),
+  );
+
+  //protectedBot.use(i18n);
 
   // Handlers
   protectedBot.use(welcomeFeature);
   protectedBot.use(adminFeature);
+  protectedBot.use(friendFeature);
 
   if (isMultipleLocales) {
     protectedBot.use(languageFeature);
   }
-
 
   // // must be the last handler
   protectedBot.use(unhandledFeature);
