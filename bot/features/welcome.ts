@@ -1,6 +1,7 @@
-import { Composer } from "grammy";
+import { Composer, InputFile } from "grammy";
 import type { Context } from "../contexts";
 import { logHandle } from "../../helpers";
+import { parseFile } from "../I18n";
 
 const composer = new Composer<Context>();
 
@@ -13,7 +14,10 @@ feature.command("start", logHandle("command-start"), async ctx => {
   \n${ctx.t("welcome.title-thrid-paragraph")}
   \n${ctx.t("welcome.title-fouth-paragraph")}`;
 
-  return await ctx.replyWithMarkdown(text);
+  const welcomeImage = new InputFile(parseFile("welcome.jpeg", "img"));
+  return await ctx.replyWithPhoto(welcomeImage, {
+    caption: text,
+  });
 });
 
 export { composer as welcomeFeature };
