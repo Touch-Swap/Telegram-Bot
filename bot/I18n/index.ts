@@ -23,8 +23,8 @@ fluent.addTranslation({
   },
 });
 
-function parseFile(filename = "") {
-  return path.resolve(process.cwd(), "locales", filename);
+export function parseFile(filename = "", folder = "locales") {
+  return path.resolve(process.cwd(), folder, filename);
 }
 
 export const isMultipleLocales = supportedLanguage.length > 1;
