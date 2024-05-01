@@ -72,7 +72,7 @@ export default function createBot(token: string, options: Options = {}) {
   protectedBot.use(adminFeature);
   protectedBot.use(friendFeature);
   protectedBot.use(socialFeature);
-  protectedBot.use(profileFeature);
+  protectedBot.use(profileFeature)
   protectedBot.use(helpFeature);
 
   if (isMultipleLocales) {

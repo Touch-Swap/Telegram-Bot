@@ -49,6 +49,13 @@ help =
     .purpose-description =Amass a wealth of Shares to trade for TAPS, the exclusive TapSwap Token on the Solana Blockchain.
 
     .text =Type /help to view this guide anytime.
+profile = 
+    .title=@{ $name } profile
+    .text = Bronze League
+    Total score: {$score}
+    Balance: {$balance}
+    .bottom-text = /profile for personal stats
+
 
 language = 
     .select = Please, select your language
