@@ -11,12 +11,13 @@ feature.command("start", logHandle("command-start"), async ctx => {
   const text = `${ctx.t("welcome.title", { name: ctx.chat.username ?? "" })}\n${ctx.t(
     "welcome.title-second-paragraph",
   )} 
-  \n${ctx.t("welcome.title-thrid-paragraph")}
+  \n${ctx.t("welcome.title-thrid-paragraph")}.
   \n${ctx.t("welcome.title-fouth-paragraph")}`;
 
   const welcomeImage = new InputFile(parseFile("welcome.jpeg", "img"));
   return await ctx.replyWithPhoto(welcomeImage, {
     caption: text,
+    parse_mode: "HTML",
   });
 });
 
