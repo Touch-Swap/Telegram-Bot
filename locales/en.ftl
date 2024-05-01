@@ -11,7 +11,7 @@ help_command =
     .description = Show Help
 friend_command = 
     .description = Invite Friend
-prifile_command = 
+profile_command = 
     .description = Show Profile
 setcommands_command =
     .description = Set bot commands
@@ -28,6 +28,27 @@ welcome =
 friend = 
     .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
     .text-referal = Your referral link: { $link } 
+
+social = 
+    .text = Join our socials so you do not miss any important news or updates
+
+help = 
+    .earn-title =TouchSwap Tap to Earn:
+    .earn-description =Embark on an engaging journey with TouchSwap, the captivating clicker game where your goal is to collect Shares by simply tapping on your screen.
+    
+    .leagues-title =Leagues:
+    .leagues-description =Advance through the ranks by accumulating Shares faster than your competitors. Outpace others and ascend through the leagues to establish dominance.
+
+    .boosts-title =Boosts:
+    .boosts-description =Enhance your earning capabilities by unlocking powerful boosts. Complete various tasks to significantly increase your Shares income.
+
+    .friends-title =Friends:
+    .friend-description =Boost your progress by inviting friends. Both you and your invited friends will benefit from exclusive bonuses. Help your friends climb the leagues to reap even greater Shares rewards together.
+
+    .purpose-title =The Purpose:
+    .purpose-description =Amass a wealth of Shares to trade for TAPS, the exclusive TapSwap Token on the Solana Blockchain.
+
+    .text =Type /help to view this guide anytime.
 
 language = 
     .select = Please, select your language
