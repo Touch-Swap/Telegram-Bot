@@ -8,7 +8,16 @@ import config from "../config";
 import { errorHandler } from "./handlers/error";
 import { isMultipleLocales, fluent } from "./I18n";
 import { updateLogger } from "./middleware";
-import { welcomeFeature, unhandledFeature, languageFeature, adminFeature, friendFeature, socialFeature, helpFeature } from "./features";
+import {
+  welcomeFeature,
+  unhandledFeature,
+  languageFeature,
+  adminFeature,
+  friendFeature,
+  socialFeature,
+  helpFeature,
+  profileFeature,
+} from "./features";
 import path from "node:path";
 import { useFluent } from "@grammyjs/fluent";
 
@@ -28,6 +37,7 @@ export default function createBot(token: string, options: Options = {}) {
   const protectedBot = bot.errorBoundary(errorHandler);
 
   // Middlewares
+  //bot.api.setMyCommands()
   bot.api.config.use(parseMode("HTML"));
   bot.api.config.use(parseMode("MarkdownV2"));
 
@@ -62,6 +72,7 @@ export default function createBot(token: string, options: Options = {}) {
   protectedBot.use(adminFeature);
   protectedBot.use(friendFeature);
   protectedBot.use(socialFeature);
+  protectedBot.use(profileFeature);
   protectedBot.use(helpFeature);
 
   if (isMultipleLocales) {
