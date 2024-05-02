@@ -4,7 +4,7 @@ start_command =
     .description = Запустити бота
 language_command = 
     .description = Змінити мову
-social_command = 
+socials_command = 
     .description = Приєднатися до спільноти
 help_command = 
     .description = Показати довідку
@@ -28,7 +28,7 @@ friend =
     .text-caption = Поділіться зі своїми друзями та отримуйте бонуси за кожного запрошеного друга та за їх активність:
     .text-referal = Ваше реферальне посилання: { $link }
 
-social =
+socials =
     .text = Приєднуйтесь до наших соціальних мереж, щоб не пропустити жодної важливої новини чи оновлень українською
 
 help =

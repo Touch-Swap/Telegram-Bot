@@ -5,7 +5,7 @@ start_command =
     .description = Start the bot
 language_command = 
     .description = Change language
-social_command = 
+socials_command = 
     .description = Join community
 help_command = 
     .description = Show Help
@@ -29,7 +29,7 @@ friend =
     .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
     .text-referal = Your referral link: { $link } 
 
-social = 
+socials = 
     .text = Join our socials so you do not miss any important news or updates
 
 help = 
