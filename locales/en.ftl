@@ -28,12 +28,17 @@ welcome =
     .menu-start = 👋 Start now!
     .menu-community = 🌐 Join Community!
     .menu-help = 🆘 Help
+
 friend = 
     .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
     .text-referal = Your referral link: { $link } 
 
 socials = 
     .text = Join our socials so you do not miss any important news or updates
+    .menu-community = {-bot-name} Community
+    .menu-x = {-bot-name} on X
+    .menu-site = {-bot-name} Site
+    .menu-play = 👋 Play
 
 help = 
     .earn-title =TouchSwap Tap to Earn:

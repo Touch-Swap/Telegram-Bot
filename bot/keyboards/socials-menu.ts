@@ -4,9 +4,11 @@ import type { Context } from "../contexts";
 export const createSocialMenuKeyboard = async (ctx: Context) => {
   return new InlineKeyboard()
     .row()
-    .url(ctx.t("welcome.menu-start"), "https://www.google.com/")
+    .url(ctx.t("socials.menu-community"), "https://t.me/touchswap_bot")
     .row()
-    .text(ctx.t("welcome.menu-community"), "/socials")
+    .url(ctx.t("socials.menu-x"), "https://twitter.com/Touchswap")
     .row()
-    .text(ctx.t("welcome.menu-help"), "/help");
+    .url(ctx.t("socials.menu-site"), "https://touchswap.xyz/")
+    .row()
+    .webApp(ctx.t("socials.menu-play"), "https://touchswap.xyz/");
 };
