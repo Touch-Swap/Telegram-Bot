@@ -37,7 +37,7 @@ export default function createBot(token: string, options: Options = {}) {
   const protectedBot = bot.errorBoundary(errorHandler);
 
   // Middlewares
-  //bot.api.setMyCommands()
+
   bot.api.config.use(parseMode("HTML"));
   bot.api.config.use(parseMode("MarkdownV2"));
 
@@ -66,16 +66,16 @@ export default function createBot(token: string, options: Options = {}) {
   );
 
   //protectedBot.use(i18n);
-
   // Handlers
   protectedBot.use(welcomeFeature);
   protectedBot.use(adminFeature);
   protectedBot.use(friendFeature);
   protectedBot.use(socialFeature);
-  protectedBot.use(profileFeature)
+  protectedBot.use(profileFeature);
   protectedBot.use(helpFeature);
 
   if (isMultipleLocales) {
+    // bot.api.setMyCommands()
     protectedBot.use(languageFeature);
   }
 
