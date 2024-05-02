@@ -62,9 +62,22 @@ function getGroupChatCommands(localeCode: string): BotCommand[] {
   return [];
 }
 
+export function getAllPrivateChatCommands(): BotCommand[] {
+  const DEFAULT_LANGUAGE_CODE = "en";
+  return [
+    ...getPrivateChatCommands(DEFAULT_LANGUAGE_CODE),
+    ...(isMultipleLocales ? [getLanguageCommand(DEFAULT_LANGUAGE_CODE)] : []),
+    getProfileCommand(DEFAULT_LANGUAGE_CODE),
+    getSocialCommand(DEFAULT_LANGUAGE_CODE),
+    getFriendCommand(DEFAULT_LANGUAGE_CODE),
+    getHelpCommand(DEFAULT_LANGUAGE_CODE),
+  ];
+}
+
 export async function setCommandsHandler(ctx: CommandContext<Context>) {
   const DEFAULT_LANGUAGE_CODE = "en";
 
+  await ctx.api.deleteMyCommands();
   // set private chat commands
   await ctx.api.setMyCommands(
     [
@@ -137,5 +150,5 @@ export async function setCommandsHandler(ctx: CommandContext<Context>) {
     },
   );
 
-  return ctx.reply(ctx.t("admin.commands-updated"));
+  return ctx.reply(ctx.t("admin.commands-updated"), { parse_mode: "HTML" });
 }
