@@ -3,7 +3,7 @@ import { Fluent } from "@moebius/fluent";
 
 export const supportedLanguage = ["en"];
 
-export type LanguageType = "en" ;
+export type LanguageType = "en";
 
 export const fluent = new Fluent({});
 
