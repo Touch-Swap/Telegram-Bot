@@ -20,11 +20,14 @@ setcommands_command =
 welcome = 
     .title =*Welcome @{ $name } to {-bot-name}*
     .title-second-paragraph =Tap on the coin and see your balance rise
-    .title-thrid-paragraph =*{-bot-name}* is a Decentralized Exchange on the Solana Blockchain,  The biggest part of * {-bot-name} * Token TOUCH distribution will occur among the players here
-    .title-fouth-paragraph = 
+    .title-third-paragraph =*{-bot-name}* is a Decentralized Exchange on the Solana Blockchain,  The biggest part of * {-bot-name} * Token TOUCH distribution will occur among the players here
+    .title-fourth-paragraph = 
         Got friends, relatives, coWorkers?
         Bring them all into the game
-        More buddies, more coins    
+        More buddies, more coins
+    .menu-start = 👋 Start now!
+    .menu-community = 🌐 Join Community!
+    .menu-help = 🆘 Help
 friend = 
     .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
     .text-referal = Your referral link: { $link } 
