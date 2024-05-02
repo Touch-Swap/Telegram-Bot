@@ -5,7 +5,7 @@ import type { HydrateFlavor } from "@grammyjs/hydrate";
 import type { ParseModeFlavor } from "@grammyjs/parse-mode";
 import type { Logger } from "../logger";
 import { LanguageType } from "../I18n";
-import {  FluentContextFlavor } from '@grammyjs/fluent';
+import { FluentContextFlavor } from "@grammyjs/fluent";
 
 export type SessionData = {
   __language_code: LanguageType;

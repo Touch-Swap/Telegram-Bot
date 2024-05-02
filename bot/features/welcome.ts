@@ -26,4 +26,8 @@ feature.command("start", logHandle("command-start"), async ctx => {
   return setCommandsHandler;
 });
 
+feature.callbackQuery("", logHandle("keyboard-language-select"), async (ctx: Context) => {
+ 
+});
+
 export { composer as welcomeFeature };
