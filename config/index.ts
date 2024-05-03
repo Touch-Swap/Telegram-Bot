@@ -20,6 +20,8 @@ const createConfigFromEnvironment = (environment: NodeJS.ProcessEnv) => {
     BOT_SERVER_PORT: port().default(80),
     BOT_ALLOWED_UPDATES: z.array(z.enum(API_CONSTANTS.ALL_UPDATE_TYPES)).default([]),
     BOT_ADMINS: z.array(z.number()).default([]),
+    WEBAPP_URL: z.string().url(),
+    API_URL: z.string().url(),
   });
 
   if (config.BOT_MODE === "webhook") {
