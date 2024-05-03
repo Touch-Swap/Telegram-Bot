@@ -1,6 +1,9 @@
 import { Middleware } from "grammy";
 import type { Update } from "@grammyjs/types";
 import type { Context } from "../bot/contexts";
+import { InlineKeyboardButton } from "grammy/types";
+import config from "../config";
+
 
 export function getUpdateInfo(ctx: Context): Omit<Update, "update_id"> {
   // eslint-disable-next-line camelcase, @typescript-eslint/no-unused-vars
@@ -26,4 +29,14 @@ export function chunk<T>(array: T[], size: number) {
     result.push(array.slice(index, index + size));
   }
   return result;
+}
+
+
+export function getOpenWebAppButton(ctx: Context): InlineKeyboardButton {
+  return {
+    text: ctx.t("welcome.menu-start"),
+    web_app: {
+      url: config.WEBAPP_URL,
+    },
+  };
 }
