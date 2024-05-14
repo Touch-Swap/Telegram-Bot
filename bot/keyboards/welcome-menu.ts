@@ -2,7 +2,7 @@ import { InlineKeyboard  } from "grammy";
 import type { Context } from "../contexts";
 import { getOpenWebAppButton } from "../../helpers";
 
-export const createWelcomeMenuKeyboard = async (ctx: Context) => {
+export const createWelcomeMenuKeyboard =  (ctx: Context) => {
   return new InlineKeyboard()
     .row()
     .add(getOpenWebAppButton(ctx))

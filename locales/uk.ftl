@@ -30,9 +30,8 @@ welcome =
     .menu-help = 🆘 Help
 
 friend = 
-    .text-caption =Share with your friends and earn bonuses for each friend you invite and for their activity:
-    .text_link_description=Your referral link: 
-    .text-referal =https://t.me/touchswap_mirror_bot?start=r_{ $code } 
+    .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
+    .text-referal = Your referral link: { $link } 
 
 socials = 
     .text = Join our socials so you do not miss any important news or updates
@@ -60,9 +59,9 @@ help =
     .text =Type /help to view this guide anytime.
 profile = 
     .title=@{ $name } profile
-    .league = { $league } League
-    .score =Total score {$score}
-    .balance=Balance: {$balance}
+    .text = Bronze League
+    Total score: {$score}
+    Balance: {$balance}
     .bottom-text = /profile for personal stats
 
 

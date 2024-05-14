@@ -11,4 +11,4 @@ const feature = composer.chatType("private").filter(isAdmin);
 
 feature.command("setcommands", logHandle("command-setcommands"), chatAction("typing"), setCommandsHandler);
 
-export { composer as adminFeature };
+export { composer as setCommandFeature };

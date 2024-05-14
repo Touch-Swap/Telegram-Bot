@@ -15,7 +15,7 @@ feature.command("language", logHandle("command-language"), async ctx => {
   });
 });
 
-feature.callbackQuery(changeLanguageData.filter(), logHandle("keyboard-language-select"), async (ctx: Context) => {
+feature.callbackQuery(changeLanguageData.filter(), logHandle("keyboard-language-select"), async (ctx: Context) => { 
   const { code: languageCode } = changeLanguageData.unpack(ctx.callbackQuery?.data || "");
 
   if (supportedLanguage.includes(languageCode)) {
