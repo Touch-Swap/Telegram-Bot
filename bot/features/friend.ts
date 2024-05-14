@@ -9,9 +9,11 @@ const feature = composer.chatType("private");
 
 feature.command("friend", logHandle("command-friend"), async ctx => {
   const text = `
-  ${ctx.t("friend.text-caption")}
-   \n
-  ${ctx.t("friend.text-referal", { link: "https://t.me/tapswap_mirror_bot?start=r_1248734702" })}
+${ctx.t("friend.text-caption")}
+
+
+${ctx.t("friend.text_link_description")}
+<code>${ctx.t("friend.text-referal", { code: ctx.chat.id.toString() })} </code>
   `;
   return await ctx.reply(text, { parse_mode: "HTML" });
 });
