@@ -19,7 +19,7 @@ ${ctx.t("profile.balance", { balance: 3000 })}
 ${ctx.t("profile.bottom-text")} `;
 
   return await ctx.reply(text, {
-    parse_mode:"MarkdownV2",
+    parse_mode: "MarkdownV2",
     reply_markup: createProfileMenuKeyboard(ctx),
   });
 };

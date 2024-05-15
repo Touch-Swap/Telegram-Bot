@@ -6,7 +6,6 @@ const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
-
 const commandResponse = async (ctx: Context) => {
   const text = `
 ${ctx.t("friend.text-caption")}

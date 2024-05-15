@@ -2,7 +2,7 @@ import { Composer } from "grammy";
 import { changeLanguageData } from "../callback-data";
 import type { Context } from "../contexts";
 import { logHandle } from "../../helpers";
-import {  LanguageType, supportedLanguage } from "../I18n";
+import { LanguageType, supportedLanguage } from "../I18n";
 import { createChangeLanguageKeyboard } from "../keyboards";
 
 const composer = new Composer<Context>();
