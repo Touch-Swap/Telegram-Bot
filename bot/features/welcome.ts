@@ -13,7 +13,7 @@ const feature = composer.chatType("private");
 
 const commadResponse = async (ctx: Context) => {
   const text = `
-  <b>${ctx.t("welcome.title", { name: ctx.me.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
+  <b>${ctx.t("welcome.title", { name: ctx.from?.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
   \n${ctx.t("welcome.title-third-paragraph")}
   \n${ctx.t("welcome.title-fourth-paragraph")}
   `;

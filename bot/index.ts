@@ -16,7 +16,6 @@ import {
   socialFeature,
   helpFeature,
   profileFeature,
-  setCommandFeature,
 } from "./features";
 import path from "node:path";
 import { useFluent } from "@grammyjs/fluent";
@@ -68,7 +67,6 @@ export default function createBot(token: string, options: Options = {}) {
   //protectedBot.use(i18n);
   // Handlers
   protectedBot.use(welcomeFeature);
-  protectedBot.use(setCommandFeature);
   protectedBot.use(friendFeature);
   protectedBot.use(socialFeature);
   protectedBot.use(profileFeature);
