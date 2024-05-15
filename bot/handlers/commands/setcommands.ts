@@ -48,15 +48,6 @@ function getPrivateChatCommands(localeCode: string): BotCommand[] {
   ];
 }
 
-function getPrivateChatAdminCommands(localeCode: string): BotCommand[] {
-  return [
-    {
-      command: "setcommands",
-      description: fluent.translate(localeCode, "setcommands_command.description"),
-    },
-  ];
-}
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getGroupChatCommands(localeCode: string): BotCommand[] {
   return [];
@@ -135,7 +126,6 @@ export async function setCommandsHandler(ctx: CommandContext<Context>) {
   await ctx.api.setMyCommands(
     [
       ...getPrivateChatCommands(DEFAULT_LANGUAGE_CODE),
-      ...getPrivateChatAdminCommands(DEFAULT_LANGUAGE_CODE),
       ...(isMultipleLocales ? [getLanguageCommand(DEFAULT_LANGUAGE_CODE)] : []),
       getProfileCommand(DEFAULT_LANGUAGE_CODE),
       getSocialCommand(DEFAULT_LANGUAGE_CODE),
