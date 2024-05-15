@@ -2,6 +2,7 @@ import { Composer, InputFile } from "grammy";
 import type { Context } from "../contexts";
 import { logHandle } from "../../helpers";
 import { parseFile } from "../I18n";
+import { createHelpMenuKeyboard } from "../keyboards";
 
 const composer = new Composer<Context>();
 
@@ -28,7 +29,11 @@ ${ctx.t("help.text")}
 `;
 
   const thumbnailImage = new InputFile(parseFile("Thumbnail.png", "img"));
-  return await ctx.replyWithPhoto(thumbnailImage, { caption: text, parse_mode: "HTML" });
+  return await ctx.replyWithPhoto(thumbnailImage, {
+    caption: text,
+    reply_markup: createHelpMenuKeyboard(ctx),
+    parse_mode: "HTML",
+  });
 };
 
 feature.command("help", logHandle("command-help"), commandResponse);
