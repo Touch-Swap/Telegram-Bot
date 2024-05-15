@@ -59,7 +59,7 @@ help =
 
     .text =Type /help to view this guide anytime.
 profile = 
-    .title=@{ $name } profile
+    .title= @{ $name } profile
     .league = { $league } League
     .score =Total score {$score}
     .balance=Balance: {$balance}
