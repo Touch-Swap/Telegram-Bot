@@ -7,7 +7,7 @@ const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
-feature.command("help", logHandle("command-help"), async ctx => {
+const commandResponse = async (ctx: Context) => {
   const text = `
 <b>${ctx.t("help.earn-title")}</b> 
 ${ctx.t("help.earn-description")}
@@ -26,8 +26,11 @@ ${ctx.t("help.purpose-description")}
 
 ${ctx.t("help.text")}
 `;
+
   const thumbnailImage = new InputFile(parseFile("Thumbnail.png", "img"));
   return await ctx.replyWithPhoto(thumbnailImage, { caption: text, parse_mode: "HTML" });
-});
+};
 
-export { composer as helpFeature };
+feature.command("help", logHandle("command-help"), commandResponse);
+
+export { composer as helpFeature, commandResponse as helpCommandResponse };

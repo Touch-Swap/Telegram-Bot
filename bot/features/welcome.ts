@@ -4,17 +4,16 @@ import { logHandle } from "../../helpers";
 import { parseFile } from "../I18n";
 import { setCommandsHandler } from "../handlers";
 import { createWelcomeMenuKeyboard } from "../keyboards";
-import { socialFeature } from "./social";
+import { socialCommandResponse } from "./social";
+import { helpCommandResponse } from "./help";
 
 const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
-
-
-feature.command("start", logHandle("command-start"), async ctx => {
+const commadResponse = async (ctx: Context) => {
   const text = `
-  <b>${ctx.t("welcome.title", { name: ctx.chat.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
+  <b>${ctx.t("welcome.title", { name: ctx.me.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
   \n${ctx.t("welcome.title-third-paragraph")}
   \n${ctx.t("welcome.title-fourth-paragraph")}
   `;
@@ -26,15 +25,12 @@ feature.command("start", logHandle("command-start"), async ctx => {
     reply_markup: createWelcomeMenuKeyboard(ctx),
   });
   return setCommandsHandler;
-});
+};
 
-feature.callbackQuery("/socials", logHandle("keybaord-command-select-social"), async (ctx: Context) => {
-  ///ctx.
-   ///await ctx.api.("/socials");
-});
+feature.command("start", logHandle("command-start"), async (ctx: Context) => commadResponse(ctx));
 
-feature.callbackQuery("/help", logHandle("keybaord-command-select-help"), async (ctx: Context) => {
-  ctx.logger.error(ctx.callbackQuery?.data);
-});
+feature.callbackQuery("/socials", logHandle("keybaord-command-select-social"), socialCommandResponse);
+
+feature.callbackQuery("/help", logHandle("keybaord-command-select-help"), helpCommandResponse);
 
 export { composer as welcomeFeature };
