@@ -1,7 +1,7 @@
-import { InlineKeyboard  } from "grammy";
+import { InlineKeyboard } from "grammy";
 import type { Context } from "../contexts";
 
-export const createSocialMenuKeyboard =  (ctx: Context) => {
+export const createSocialMenuKeyboard = (ctx: Context) => {
   return new InlineKeyboard()
     .row()
     .url(ctx.t("socials.menu-community"), "https://t.me/touchswap_bot")

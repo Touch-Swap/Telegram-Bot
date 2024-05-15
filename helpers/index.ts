@@ -4,7 +4,6 @@ import type { Context } from "../bot/contexts";
 import { InlineKeyboardButton } from "grammy/types";
 import config from "../config";
 
-
 export function getUpdateInfo(ctx: Context): Omit<Update, "update_id"> {
   // eslint-disable-next-line camelcase, @typescript-eslint/no-unused-vars
   const { update_id, ...update } = ctx.update;
@@ -30,7 +29,6 @@ export function chunk<T>(array: T[], size: number) {
   }
   return result;
 }
-
 
 export function getOpenWebAppButton(ctx: Context): InlineKeyboardButton {
   return {
