@@ -38,3 +38,9 @@ export function getOpenWebAppButton(ctx: Context): InlineKeyboardButton {
     },
   };
 }
+
+export function getRank(rank: number): string {
+  const badgeTitles = ["Plankton", "Minnow", "Dolphin", "Shark", "Orca", "Whale", "Megalodon", "Leviathan", "Kraken"];
+  if (rank >= badgeTitles.length) return badgeTitles[badgeTitles.length - 1];
+  return badgeTitles[rank];
+}
