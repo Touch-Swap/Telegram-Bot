@@ -12,7 +12,7 @@ ${ctx.t("friend.text-caption")}
   
   
 ${ctx.t("friend.text_link_description")}
-<code>${ctx.t("friend.text-referal", { code: ctx.me.id.toString() })} </code>
+<code>${ctx.t("friend.text-referal", { code: ctx.from?.id.toString() || "" })} </code>
     `;
   return await ctx.reply(text, { parse_mode: "HTML" });
 };

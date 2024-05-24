@@ -6,25 +6,44 @@ import { setCommandsHandler } from "../handlers";
 import { createWelcomeMenuKeyboard } from "../keyboards";
 import { socialCommandResponse } from "./social";
 import { helpCommandResponse } from "./help";
+import axios from "axios";
+import config from "../../config";
 
 const composer = new Composer<Context>();
 
 const feature = composer.chatType("private");
 
 const commadResponse = async (ctx: Context) => {
-  const text = `
-  <b>${ctx.t("welcome.title", { name: ctx.from?.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
-  \n${ctx.t("welcome.title-third-paragraph")}
-  \n${ctx.t("welcome.title-fourth-paragraph")}
-  `;
+  if (typeof ctx.match != "string") {
+    return ctx.reply("An error occured please click /start");
+  }
+  let referId: number | null = parseInt(ctx.match?.replace("r_", ""));
+  if (Number.isNaN(referId)) referId = null;
+  try {
+    await axios.post(`${config.API_URL}/user`, {
+      username: ctx.from?.username || "",
+      first: ctx.from?.first_name || "",
+      last: ctx.from?.last_name || "",
+      id: ctx.from?.id,
+      lang: "en",
+      referedBy: referId,
+    });
+    const text = `
+<b>${ctx.t("welcome.title", { name: ctx.from?.username ?? "" })}</b> \n${ctx.t("welcome.title-second-paragraph")}
+\n${ctx.t("welcome.title-third-paragraph")}
+\n${ctx.t("welcome.title-fourth-paragraph")}
+`;
 
-  const welcomeImage = new InputFile(parseFile("welcome.jpeg", "img"));
-  await ctx.replyWithPhoto(welcomeImage, {
-    caption: text,
-    parse_mode: "HTML",
-    reply_markup: createWelcomeMenuKeyboard(ctx),
-  });
-  return setCommandsHandler;
+    const welcomeImage = new InputFile(parseFile("welcome.jpeg", "img"));
+    await ctx.replyWithPhoto(welcomeImage, {
+      caption: text,
+      parse_mode: "HTML",
+      reply_markup: createWelcomeMenuKeyboard(ctx),
+    });
+    return setCommandsHandler;
+  } catch (error) {
+    return ctx.reply("An error occured please click /start");
+  }
 };
 
 feature.command("start", logHandle("command-start"), async (ctx: Context) => commadResponse(ctx));
