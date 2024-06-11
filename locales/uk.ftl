@@ -1,73 +1,51 @@
-
 -bot-name = TouchSwap
 
 start_command = 
-    .description = Start the bot
+    .description = Запустити бота
+
 language_command = 
-    .description = Change language
+    .description = Змінити мову
+
 socials_command = 
-    .description = Join community
+    .description = Приєднатися до спільноти
+
 help_command = 
-    .description = Show Help
+    .description = Показати довідку
+
 friend_command = 
-    .description = Invite Friend
+    .description = Запросити друга
+
 profile_command = 
-    .description = Show Profile
+    .description = Показати профіль
+
 setcommands_command =
-    .description = Set bot commands
+    .description = Встановити команди бота
 
 
 welcome = 
-    .title =Welcome @{ $name }! to {-bot-name}!
-    .title-second-paragraph =Tap on the coin and see your balance rise.
-    .title-third-paragraph = <b>{-bot-name}</b> is a Decentralized Exchange on the Solana Blockchain. The biggest part of <b>{-bot-name}</b> Token TOUCH distribution will occur among the players here.
+    .title = Ласкаво просимо @{ $name }! до {-bot-name}!
+    .title-second-paragraph = Натисніть на монету і дивіться, як зростає ваш баланс.
+    .title-third-paragraph = <b>{-bot-name}</b> - це децентралізована біржа на блокчейні Tron. Найбільша частина токенів <b>{-bot-name}</b> TOUCH буде розподілена серед гравців тут.
     .title-fourth-paragraph = 
-        Got friends, relatives, co-workers?
-        Bring them all into the game.
-        More buddies, more coins.
-    .menu-start = 👋 Start now!
-    .menu-community = 🌐 Join Community!
-    .menu-help = 🆘 Help
+        Є друзі, родичі, колеги?
+        Приведіть їх усіх до гри.
+        Більше друзів - більше монет.
+    .menu-start = 👋 Почати зараз!
+    .menu-community = 🌐 Приєднатися до спільноти!
+    .menu-help = 🆘 Довідка
 
 friend = 
-    .text-caption = Share with your friends and earn bonuses for each friend you invite and for their activity:
-    .text-referal = Your referral link: { $link } 
+    .text-caption = Поділіться з друзями та отримуйте бонуси за кожного запрошеного друга та їхню активність:
+    .text_link_description = Ваше реферальне посилання: 
+    .text-referal = https://t.me/touchswap_bot?start=r_{ $code } 
 
 socials = 
-    .text = Join our socials so you do not miss any important news or updates
-    .menu-community = {-bot-name} Community
-    .menu-x = {-bot-name} on X
-    .menu-site = {-bot-name} Site
-    .menu-play = 👋 Play
+    .text = Приєднуйтесь до наших соцмереж, щоб не пропустити важливі новини та оновлення
+    .menu-community = Спільнота {-bot-name}
+    .menu-x = {-bot-name} на X
+    .menu-site = Сайт {-bot-name}
+    .menu-play = 👋 Грати
 
 help = 
-    .earn-title =TouchSwap Tap to Earn:
-    .earn-description =Embark on an engaging journey with TouchSwap, the captivating clicker game where your goal is to collect Shares by simply tapping on your screen.
-    
-    .leagues-title =Leagues:
-    .leagues-description =Advance through the ranks by accumulating Shares faster than your competitors. Outpace others and ascend through the leagues to establish dominance.
-
-    .boosts-title =Boosts:
-    .boosts-description =Enhance your earning capabilities by unlocking powerful boosts. Complete various tasks to significantly increase your Shares income.
-
-    .friends-title =Friends:
-    .friend-description =Boost your progress by inviting friends. Both you and your invited friends will benefit from exclusive bonuses. Help your friends climb the leagues to reap even greater Shares rewards together.
-
-    .purpose-title =The Purpose:
-    .purpose-description =Amass a wealth of Shares to trade for TAPS, the exclusive TapSwap Token on the Solana Blockchain.
-
-    .text =Type /help to view this guide anytime.
-profile = 
-    .title=@{ $name } profile
-    .text = Bronze League
-    Total score: {$score}
-    Balance: {$balance}
-    .bottom-text = /profile for personal stats
-
-
-language = 
-    .select = Please, select your language
-    .changed = Language successfully changed
-admin =
-    .commands-updated = Commands updated.
-unhandled = Unrecognized command Try /start
+    .earn-title = {-bot-name} Натискати, щоб заробити:
+    .earn-description = Почніть захоплюючу подорож з {-bot-name}, захоплюючою грою-кліккером, де ваша мета - збирати Частки, просто натискаючи на

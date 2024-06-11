@@ -20,7 +20,7 @@ setcommands_command =
 welcome = 
     .title =Welcome @{ $name }! to {-bot-name}!
     .title-second-paragraph =Tap on the coin and see your balance rise.
-    .title-third-paragraph = <b>{-bot-name}</b> is a Decentralized Exchange on the Solana Blockchain. The biggest part of <b>{-bot-name}</b> Token TOUCH distribution will occur among the players here.
+    .title-third-paragraph = <b>{-bot-name}</b> is a Decentralized Exchange on the Tron Blockchain. The biggest part of <b>{-bot-name}</b> Token TOUCH distribution will occur among the players here.
     .title-fourth-paragraph = 
         Got friends, relatives, co-workers?
         Bring them all into the game.
@@ -55,7 +55,7 @@ help =
     .friend-description =Boost your progress by inviting friends. Both you and your invited friends will benefit from exclusive bonuses. Help your friends climb the leagues to reap even greater Shares rewards together.
 
     .purpose-title =The Purpose:
-    .purpose-description =Amass a wealth of Shares to trade for TAPS, the exclusive TapSwap Token on the Solana Blockchain.
+    .purpose-description =Amass a wealth of Shares to trade for TAPS, the exclusive TapSwap Token on the Tron Blockchain.
 
     .text =Type /help to view this guide anytime.
 profile = 
