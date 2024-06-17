@@ -9,7 +9,6 @@ import { FluentContextFlavor } from "@grammyjs/fluent";
 
 export type SessionData = {
   __language_code: LanguageType;
-  // field?: string;
 };
 
 type ExtendedContextFlavor = {

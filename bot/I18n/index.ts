@@ -15,13 +15,13 @@ fluent.addTranslation({
   },
 });
 
-// fluent.addTranslation({
-//   locales: "uk",
-//   filePath: [parseFile("uk.ftl")],
-//   bundleOptions: {
-//     useIsolating: false,
-//   },
-// });
+fluent.addTranslation({
+  locales: "uk",
+  filePath: [parseFile("uk.ftl")],
+  bundleOptions: {
+    useIsolating: false,
+  },
+});
 
 export function parseFile(filename = "", folder = "locales") {
   return path.resolve(process.cwd(), folder, filename);
