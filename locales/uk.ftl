@@ -25,7 +25,7 @@ setcommands_command =
 welcome = 
     .title = Ласкаво просимо @{ $name }! до {-bot-name}!
     .title-second-paragraph = Натисніть на монету і дивіться, як зростає ваш баланс.
-    .title-third-paragraph = <b>{-bot-name}</b> - це децентралізована біржа на блокчейні Tron. Найбільша частина токенів <b>{-bot-name}</b> TOUCH буде розподілена серед гравців тут.
+    .title-third-paragraph = <b>{-bot-name}</b> - це децентралізована біржа на блокчейні Ton. Найбільша частина токенів <b>{-bot-name}</b> TOUCH буде розподілена серед гравців тут.
     .title-fourth-paragraph = 
         Є друзі, родичі, колеги?
         Приведіть їх усіх до гри.
