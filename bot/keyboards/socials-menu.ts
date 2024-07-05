@@ -4,7 +4,7 @@ import type { Context } from "../contexts";
 export const createSocialMenuKeyboard = (ctx: Context) => {
   return new InlineKeyboard()
     .row()
-    .url(ctx.t("socials.menu-community"), "https://t.me/touchswap_bot")
+    .url(ctx.t("socials.menu-community"), "https://t.me/TouchSwap")
     .row()
     .url(ctx.t("socials.menu-x"), "https://twitter.com/Touchswap")
     .row()
